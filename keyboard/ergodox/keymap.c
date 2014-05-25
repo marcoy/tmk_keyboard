@@ -113,7 +113,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         TRNS,F1,  F2,  F3,  F4,  F5,  F11,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,FN4,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,FN7,FN8,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,
                                       TRNS,TRNS,
@@ -122,7 +122,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
              F12, F6,  F7,  F8,  F9,  F10, TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                  TRNS,FN5,FN6,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
                        TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,
@@ -153,7 +153,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // layer 3: numpad
         // left hand
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        FN4,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -183,11 +183,15 @@ enum function_id {
  * Fn action definition
  */
 static const uint16_t PROGMEM fn_actions[] = {
-    ACTION_FUNCTION(TEENSY_KEY),                    // FN0 - Teensy key
-    ACTION_LAYER_MOMENTARY(1),                      // FN1 - switch to Layer1
-    ACTION_LAYER_SET(2, ON_PRESS),                  // FN2 - push Layer2
-    ACTION_LAYER_SET(3, ON_PRESS),                  // FN3 - push Layer3
-    ACTION_LAYER_SET(0, ON_PRESS),                  // FN4 - push Layer0
+    [0] = ACTION_FUNCTION(TEENSY_KEY),          // FN0 - Teensy key
+    [1] = ACTION_LAYER_MOMENTARY(1),            // FN1 - switch to Layer1
+    [2] = ACTION_LAYER_SET(2, ON_PRESS),        // FN2 - push Layer2
+    [3] = ACTION_LAYER_SET(3, ON_PRESS),        // FN3 - push Layer3
+    [4] = ACTION_LAYER_SET(0, ON_PRESS),        // FN4 - push Layer0
+    [5] = ACTION_MODS_KEY(MOD_LSFT, KC_9),      // FN5 - (
+    [6] = ACTION_MODS_KEY(MOD_LSFT, KC_0),      // FN6 - )
+    [7] = ACTION_MODS_KEY(MOD_LSFT, KC_LBRC),   // FN7 - {
+    [8] = ACTION_MODS_KEY(MOD_LSFT, KC_RBRC),   // FN8 - }
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
