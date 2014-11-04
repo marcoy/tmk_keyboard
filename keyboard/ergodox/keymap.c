@@ -130,16 +130,16 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS
     ),
 
-    KEYMAP(  // layer 2 : keyboard functions
+    KEYMAP(  // layer 2 : gaming
         // left hand
-        FN0, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,
+        0,   1,   2,   3,   4,   5,   6,
+        BSLS,Q,   W,   E,   R,   T,   FN2,
+        TAB, A,   S,   D,   F,   G,
+        LSFT,Z,   X,   C,   V,   B,   GRV,
+        LCTL,LALT,BSPC,BTN4,BTN5,
                                       TRNS,TRNS,
                                            TRNS,
-                                 TRNS,TRNS,TRNS,
+                                   SPC,ENT,TRNS,
         // right hand
              FN4, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
@@ -185,7 +185,7 @@ enum function_id {
 static const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_FUNCTION(TEENSY_KEY),          // FN0 - Teensy key
     [1] = ACTION_LAYER_MOMENTARY(1),            // FN1 - switch to Layer1
-    [2] = ACTION_LAYER_SET(2, ON_PRESS),        // FN2 - push Layer2
+    [2] = ACTION_LAYER_TOGGLE(2),               // FN2 - push Layer2
     [3] = ACTION_LAYER_SET(3, ON_PRESS),        // FN3 - push Layer3
     [4] = ACTION_LAYER_SET(0, ON_PRESS),        // FN4 - push Layer0
     [5] = ACTION_MODS_KEY(MOD_LSFT, KC_9),      // FN5 - (
