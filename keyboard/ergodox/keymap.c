@@ -132,11 +132,11 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // layer 2 : gaming
         // left hand
-        0,   1,   2,   3,   4,   5,   6,
+        ESC, 1,   2,   3,   4,   5,   6,
         BSLS,Q,   W,   E,   R,   T,   FN2,
         TAB, A,   S,   D,   F,   G,
         LSFT,Z,   X,   C,   V,   B,   GRV,
-        LCTL,LALT,BSPC,BTN4,BTN5,
+        LCTL,LALT,BSPC,BTN5,BTN4,
                                       TRNS,TRNS,
                                            TRNS,
                                    SPC,ENT,TRNS,
