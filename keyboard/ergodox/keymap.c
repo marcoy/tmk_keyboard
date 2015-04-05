@@ -136,7 +136,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         BSLS,Q,   W,   E,   R,   T,   FN2,
         TAB, A,   S,   D,   F,   G,
         LSFT,Z,   X,   C,   V,   B,   GRV,
-        LCTL,LALT,BSPC,BTN5,BTN4,
+        LCTL,LALT,BSPC,FN1,BTN4,
                                       TRNS,TRNS,
                                            TRNS,
                                    SPC,ENT,TRNS,
@@ -185,8 +185,8 @@ enum function_id {
 static const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_FUNCTION(TEENSY_KEY),          // FN0 - Teensy key
     [1] = ACTION_LAYER_MOMENTARY(1),            // FN1 - switch to Layer1
-    [2] = ACTION_LAYER_TOGGLE(2),               // FN2 - push Layer2
-    [3] = ACTION_LAYER_SET(3, ON_PRESS),        // FN3 - push Layer3
+    [2] = ACTION_LAYER_TOGGLE(2),               // FN2 - toggle Layer2
+    [3] = ACTION_LAYER_TOGGLE(3),               // FN3 - toggle Layer3
     [4] = ACTION_LAYER_SET(0, ON_PRESS),        // FN4 - push Layer0
     [5] = ACTION_MODS_KEY(MOD_LSFT, KC_9),      // FN5 - (
     [6] = ACTION_MODS_KEY(MOD_LSFT, KC_0),      // FN6 - )
